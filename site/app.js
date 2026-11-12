@@ -2619,6 +2619,7 @@
   const kDue = (now) => Object.entries(study.kcards || {}).filter(([id, c]) => bySlug[kSlug(id)] && c.due <= (now || Date.now()));
 
   function kavramDeskHtml() {
+    if (!conceptDecks().length) return "";   // kavram paneli olmayan projede kart gosterilmez
     const due = kDue().length;
     return `<a class="desk-card desk-action" href="#/kavram">
       <span class="desk-k">Kavram desteleri</span>
@@ -2633,7 +2634,7 @@
     const slug = bySlug[query.ders] ? query.ders : "";
     const n = +query.bolum || 0;
     const head = `<p class="crumbs"><a href="#/calisma">Çalışma masan</a> / Kavram desteleri</p>`;
-    if (!decks.length) return `${head}<h1>Kavram desteleri</h1><p class="muted">Kavram kartları yüklenemedi. İnternete bağlanınca sayfayı yenile.</p>`;
+    if (!decks.length) return `${head}<h1>Kavram desteleri</h1><p class="muted">Bu projede kavram kartı yok: derslerin bölüm raporlarında kavram panelleri tanımlı değil.</p>`;
     if (query.calis) {
       const deck = decks.find((d) => d.slug === slug && d.n === n);
       const title = deck ? `${bySlug[slug].subject} · ${n}. bölüm` : slug ? `${bySlug[slug].subject} · bekleyen kavramlar` : "Bekleyen kavramlar";

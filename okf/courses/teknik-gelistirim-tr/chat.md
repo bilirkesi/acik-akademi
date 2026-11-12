@@ -5,7 +5,7 @@ description: Teknik Gelişim (Türkçe) dersinin kaynaklarından üretilmiş 100
 course: teknik-gelistirim-tr
 question_count: 100
 status: stable
-generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T06:36:15Z }
+generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T12:35:38Z }
 resource: /courses/teknik-gelistirim-tr/chat.md
 ---
 

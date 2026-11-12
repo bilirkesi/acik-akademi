@@ -5,7 +5,7 @@ description: SGA bellek havuzlarının (sga_target, pga_aggregate_target) ve otu
 course: teknik-gelistirim-tr
 chapter: 8
 status: stable
-generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T07:22:59Z }
+generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T12:35:38Z }
 notebook: "https://notebooklm.google.com/notebook/d9fbd16b-86fb-45ab-af81-dc503b2c5aad"
 ---
 

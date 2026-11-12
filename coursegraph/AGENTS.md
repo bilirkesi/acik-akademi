@@ -22,7 +22,7 @@
 - `build()` shells out to `node` via `dump_interactive()` to read `site/interactive.js`; `node` must be on PATH to rebuild.
 - MCP tools in `server.py` are registered with the local `tool(name, description, inputSchema)` decorator; adding a tool means adding one decorated function. `initialize`, `ping`, `tools/list`, `tools/call` (and the `notifications/*` no-ops) are handled in `_handle`: bad arguments answer JSON-RPC `-32602`, a tool exception answers an `isError: true` text result, and stdout carries protocol messages only.
 - `opencode.json` starts the server as `py -3 -m coursegraph.server` with `cwd: "."` (the repo root), so `coursegraph` is importable without an absolute `PYTHONPATH`. Never hardcode a machine-specific interpreter path or `PYTHONPATH` there; on POSIX use `python3` instead of `py -3`.
-- Unknown course slug in `course_unit_cfg()` falls back to the islam-mezhepleri-tarihi config (backward compatibility).
+- Unknown course slug in `course_unit_cfg()` falls back to the islam-mezhepleri-tarihi config (backward compatibility; that course lives in the İlahiyat repository).
 
 ## Work Guidance
 - After changing `data/*/`, `courses.json`, or `site/interactive.js`, regenerate: `py -3 -m coursegraph.indexer`, then `py -3 -m coursegraph.mindmap` and `py -3 -m coursegraph.site_export`.

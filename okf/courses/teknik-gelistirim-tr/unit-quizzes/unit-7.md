@@ -6,7 +6,7 @@ course: teknik-gelistirim-tr
 unit: 7
 question_count: 12
 status: stable
-generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-11T07:22:53Z }
+generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T12:35:38Z }
 resource: /courses/teknik-gelistirim-tr/unit-quizzes/unit-7.md
 ---
 

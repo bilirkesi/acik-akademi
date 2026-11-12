@@ -1,10 +1,12 @@
 # Açık Akademi
 
-**Açık Akademi** — AÖF (Anadolu Üniversitesi) ve İÜ İlahiyat dersleri ile Oracle/IFS teknik eğitim
-programları için ücretsiz, internetsiz çalışan bir ders sitesi. Statik bir PWA: sunucu tarafı yok, her
-şey `window.*` veri paketleriyle tarayıcıda çalışıyor.
+**Açık Akademi** — Oracle ve IFS Cloud DBA eğitim programı için ücretsiz, internetsiz çalışan bir ders
+sitesi. Program İngilizce ve Türkçe olmak üzere iki dilden yayımlanır. Statik bir PWA: sunucu tarafı
+yok, her şey `window.*` veri paketleriyle tarayıcıda çalışıyor.
 
-**Live site:** <https://bilirkesi.github.io/acik-ilahiyat-site/>
+**Live site:** <https://bilirkesi.github.io/acik-akademi/>
+
+> İlahiyat (AÖF ve İÜ) dersleri kardeş depoda: <https://github.com/bilirkesi/acik-ilahiyat-site>.
 
 ---
 
@@ -12,26 +14,22 @@ programları için ücretsiz, internetsiz çalışan bir ders sitesi. Statik bir
 
 | Course | Code | Chapters | Unit quizzes | Questions | Practice exams | Chapter audio |
 |---|---|---|---|---|---|---|
-| İslam Mezhepleri Tarihi | İLH207U | 6 | 6 | 90 | 3 | 6 |
-| Türk Dili I | TÜR201U | 8 | 8 | 115 | 3 | 8 |
-| Atatürk İlkeleri ve İnkılap Tarihi I | TAR201U | 8 | 8 | 108 | 3 | 8 |
-| Osmanlı Türkçesi I | TAR111U | 8 | 8 | 123 | – | 8 |
 | Teknik Gelişim: IFS Cloud & Oracle DBA | TEK-ORA | 10 | 10 | 129 | 3 | 10 |
 | Teknik Gelişim (Türkçe) | TEK-ORA-TR | 10 | 10 | 194 | 3 | 10 |
 
-30 AÖF chapters plus a 10 chapter Oracle and IFS Cloud DBA training program, 435 AÖF questions
-and the past midterm (çıkmış vize) of the last five academic years.
+A 10 chapter Oracle and IFS Cloud DBA training programme, published in English and in Turkish from the
+same material: 323 questions, three practice exams per course, a chapter audio overview for every
+chapter, and a question-and-answer corpus grounded in the course's own sources.
 
-The last two courses are not university courses: they are a professional Oracle and IFS Cloud
-training programme, published in English and in Turkish from the same material.
+These are not university courses: they are a professional Oracle and IFS Cloud training programme.
 
 On the site a student can:
 
-- read the chapter notes with the AÖF infographics and the book unit summaries side by side,
+- read the chapter notes with the course infographics and the book unit summaries side by side,
 - ask a question and get an answer with the sources it was grounded in,
-- drill the unit quizzes and the past exams, with an answer key and per-question solutions,
+- drill the unit quizzes and the practice exams, with an answer key and per-question solutions,
 - review with an FSRS-4.5 spaced-repetition desk, wrong-answer list and daily streak,
-- play the word games and the Ottoman Turkish letter workshop,
+- play the word games,
 - highlight and annotate the notes, export them as a printed booklet,
 - share a challenge with a friend (no server involved),
 - install it as an app and download each course for offline use.
@@ -59,9 +57,10 @@ courses.json + university.json + data/<slug>/
 `data/<slug>/` is the single source of truth for course content. `site/` and `okf/` are **build
 output** — change the data or the template and rebuild, never edit the generated copy by hand.
 
-Study material is generated with [NotebookLM](https://notebooklm.google.com) from the AÖF textbook
-PDFs and YouTube lecture captions, through the `notebooklm` CLI of `notebooklm-py`. The ranking of
-source kinds (textbook first, lecture captions last) lives in `university.json` → `grounding`.
+Study material is generated with [NotebookLM](https://notebooklm.google.com) from the IFS and Oracle
+documentation in the course's own notebook, through the `notebooklm` CLI of `notebooklm-py`. The ranking
+of source kinds lives in `university.json` → `grounding`: the official Oracle/IFS documents come first,
+third-party write-ups and personal screenshots are excluded.
 
 ## Requirements
 
@@ -146,5 +145,5 @@ the site and the OKF bundle regenerated, and the test suite green.
 ## License
 
 GPL-3.0 — see [`LICENSE`](LICENSE). The vendored `extensions/notebook-nest/` keeps its own
-GPL-3.0 notice. The course material is derived from the published AÖF textbooks and is used for
-private study.
+GPL-3.0 notice. The course material is derived from the published IFS and Oracle documentation and is
+used for private study.

@@ -39,8 +39,15 @@ class TestBrandName(unittest.TestCase):
         self.assertEqual(self.uni["codePrefix"], "AAK")
 
     def test_the_registry_entry_matches(self) -> None:
-        self.assertEqual(self.unis["aiu"]["name"], "Açık Akademi")
-        self.assertEqual(self.unis["aiu"]["short"], "AAK")
+        """Kurslarin gosterdigi her universite kayitlarda olmali."""
+        courses = json.loads((ROOT / "courses.json").read_text(encoding="utf-8-sig"))
+        for slug, course in courses.items():
+            uid = course.get("university_id")
+            if uid:
+                self.assertIn(uid, self.unis, slug)
+
+    def test_the_technical_program_is_registered(self) -> None:
+        self.assertEqual(self.unis["teknik"]["short"], "TEK")
 
     def test_the_storage_key_is_unchanged(self) -> None:
         """Yerel ilerleme anahtari adla degismemeli; ogrencilerin ilerlemesi korunur."""
@@ -104,6 +111,8 @@ class TestLearnerWording(unittest.TestCase):
     def test_the_historical_use_survives(self) -> None:
         """Ebû Hanife'nin ogrencileri bir tarihsel olgudur; degistirilmez."""
         path = ROOT / "data" / "islam-mezhepleri-tarihi" / "study_plan.json"
+        if not path.exists():
+            self.skipTest("bu depo ilahiyat derslerini icermiyor")
         text = path.read_text(encoding="utf-8-sig")
         self.assertIn("öğrencileri", text)
 

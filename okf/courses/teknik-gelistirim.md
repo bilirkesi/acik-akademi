@@ -18,7 +18,7 @@ school: "IFS Cloud & Oracle DBA Eğitim Programı"
 mode: own
 language: tr
 status: active
-generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T06:36:15Z }
+generated: { by: acik-ilahiyat-exporter/1.0, at: 2026-11-12T12:35:38Z }
 resource: "https://notebooklm.google.com/notebook/d9fbd16b-86fb-45ab-af81-dc503b2c5aad"
 notebook: "https://notebooklm.google.com/notebook/d9fbd16b-86fb-45ab-af81-dc503b2c5aad"
 sources:
