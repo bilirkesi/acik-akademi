@@ -80,10 +80,11 @@ Rules for the bundle itself live in `okf/AGENTS.md`.
   (`name`, `shortName`, `tagline`, `issuer`, `codePrefix`) and `scripts/render_brand_icons.py` draws the
   emblem (an open book with light behind it) into `favicon.svg`, `crest.svg` and the PWA icons.
   `storageKey` stays as it is: it is the learners' local-progress key and must not change with the name.
-- **Scope**: this repository is the platform plus the Oracle/IFS programme. The AÖF and İÜ İlahiyat
-  courses live in the sibling repository `bilirkesi/acik-ilahiyat-site`, which keeps its own copy of this
-  infrastructure. Work that concerns the İlahiyat material belongs there; work that concerns the
-  platform or the technical programme belongs here.
+- **Scope**: this repository is self-contained: the platform infrastructure and the Oracle/IFS
+  programme. The AÖF and İÜ İlahiyat courses are published from a separate repository
+  (`bilirkesi/acik-ilahiyat-site`), which has its own copy of the infrastructure. The two repositories
+  are independent from 2026-11-16: nothing is synchronised between them, and a change here is not
+  expected in the other one.
 - Runtime: **no backend**. `site/` is a static SPA (hash router) served from any static host. All data ships as JS bundles that assign to `window.*`.
 - Source of truth for configuration: `university.json` (branding, pass mark, colors, exam dates, AÖF grading weights and pass threshold, `grounding` source ranking and prompt rules for NotebookLM generation), `courses.json` (the two technical courses), `universities.json`.
 - A course overrides the university-wide settings it needs in `courses.json[course].config`: the `language` and `audience` of its material, how many `chapters` it has, and its own `grounding` (source ranking and prompt rules). `load_university(root, course)` applies the override; `pipeline.py`, `audit_sources.py` and `generate_chapter_audio.py` use it, so a course can be built in another language or on another source hierarchy.

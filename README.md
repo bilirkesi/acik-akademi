@@ -6,7 +6,8 @@ yok, her şey `window.*` veri paketleriyle tarayıcıda çalışıyor.
 
 **Live site:** <https://bilirkesi.github.io/acik-akademi/>
 
-> İlahiyat (AÖF ve İÜ) dersleri kardeş depoda: <https://github.com/bilirkesi/acik-ilahiyat-site>.
+> İlahiyat (AÖF ve İÜ) dersleri ayrı bir projede yayımlanıyor:
+> <https://github.com/bilirkesi/acik-ilahiyat-site>. İki proje bağımsızdır.
 
 ---
 
